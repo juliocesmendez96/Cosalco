@@ -4,11 +4,12 @@ const supabase = createClient('https://skqjginecjtcsknnddwc.supabase.co', 'eyJhb
 
 async function loadProducts() {
     let { data, error } = await supabase
-        .from('Articulos')
-        .select('*')
-        .limit(50);
+    .from('Articulos') // probá con el nombre exacto
+    .select('*')
+    .limit(5);
 
-    console.log(data);
+    console.log("DATA:", data);
+    console.log("ERROR:", error);
+
 }
 loadProducts();
-
