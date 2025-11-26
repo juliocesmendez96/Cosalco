@@ -4,18 +4,14 @@ const supabase = createClient('https://skqjginecjtcsknnddwc.supabase.co', 'eyJhb
 
 async function loadProducts() {
     console.log("Cargando datos...");
-
+    
     const { data, error } = await supabase
-        .from('Articulos')
+        .from('Articulos')  // O el nombre EXACTO de tu tabla
         .select('*')
-        .limit(50);
+        .limit(10);
 
-    if (error) {
-        console.error("ERROR:", error);
-        return;
-    }
-
-    console.log("RESULTADOS:", data);
+    console.log("DATA:", data);
+    console.log("ERROR:", error);
 }
 
 loadProducts();
