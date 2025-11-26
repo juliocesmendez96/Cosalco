@@ -1,34 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Webapp</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <h1>Mi Webapp Modificada</h1>
-  <div id="output"></div>
+<div class="layout">
 
-  <table id="tabla-articulos" border="1">
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Sección</th>
-            <th>Familia</th>
-            <th>Descripción</th>
-            <th>Unidad</th>
-            <th>Ubicación</th>
-            <th>Costo</th>
-            <th>Saldo</th>
-            <th>Mailing</th>
-            <th>Marca</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="user-box">
+            <img class="avatar" src="https://via.placeholder.com/60">
+            <div class="user-text">
+                <h3>Inventario</h3>
+                <p>Panel interno</p>
+            </div>
+        </div>
 
+        <nav class="menu">
+            <a class="active">📦 Inventario</a>
+            <a>📄 Órdenes</a>
+            <a>⚙️ Configuración</a>
+        </nav>
+    </aside>
 
-  <script type="module" src="script.js"></script>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <input type="text" id="search" placeholder="Buscar...">
+        </header>
+
+        <!-- PANEL PRINCIPAL -->
+        <section class="panel">
+            <h2>Listado de Artículos</h2>
+
+            <div class="table-wrapper">
+                <table id="articulosTable">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
