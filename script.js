@@ -21,10 +21,10 @@ async function loadProducts() {
     data.forEach(item => {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${item.codigo || ""}</td>
-            <td>${item.descripcion || ""}</td>
-            <td>${item.precio || ""}</td>
-            <td>${item.stock || ""}</td>
+            <td>${item.Codigo || ""}</td>
+            <td>${item.Descripcion || ""}</td>
+            <td>${item.Seccion || ""}</td>
+            <td>${item.Familia || ""}</td>
         `;
         tbody.appendChild(row);
     });
