@@ -116,6 +116,16 @@ body {
     cursor: pointer;
 }
 
+/* Móvil: mantenerlo arriba a la derecha y visible */
+@media (max-width: 767px) {
+    .menu-btn {
+        position: fixed;
+        top: 12px;
+        right: 16px;
+        z-index: 2000;
+    }
+}
+
 @media (min-width: 768px) {
     .menu-btn {
         display: none;

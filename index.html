@@ -11,34 +11,33 @@
 <div class="layout">
 
     <!-- SIDEBAR -->
-    <aside id="sidebar" class="sidebar hidden-mobile">
+    <div id="sidebar" class="sidebar hidden-mobile">
         <div class="user-box">
-            <img class="avatar" src="https://via.placeholder.com/60">
-            <div class="user-text">
-                <h3>Inventario</h3>
-                <p>Panel interno</p>
+            <img src="https://i.pravatar.cc/80" class="avatar">
+            <div>
+                <strong>Usuario</strong><br>
+                <small>Inventario</small>
             </div>
         </div>
 
         <nav class="menu">
-            <a class="active">📦 Inventario</a>
-            <a>📄 Órdenes</a>
-            <a>⚙️ Configuración</a>
+            <a class="active">Artículos</a>
+            <a>Movimientos</a>
+            <a>Configuración</a>
         </nav>
-    </aside>
+    </div>
 
     <!-- CONTENIDO -->
-    <main class="content">
+    <div class="content">
 
         <!-- TOPBAR -->
-        <header class="topbar">
+        <div class="topbar">
             <button id="menuBtn" class="menu-btn">☰</button>
-            <input type="text" id="search" placeholder="Buscar...">
-        </header>
+            <input type="text" placeholder="Buscar...">
+        </div>
 
         <!-- PANEL -->
-        <section class="panel">
-            <h2>Listado de Artículos</h2>
+        <div class="panel">
 
             <div class="table-wrapper">
                 <table id="articulosTable">
@@ -51,12 +50,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- CARGA SUPABASE -->
                     </tbody>
                 </table>
             </div>
-        </section>
 
-    </main>
+        </div>
+
+    </div>
 
 </div>
 

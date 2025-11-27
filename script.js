@@ -4,6 +4,7 @@ const supabaseUrl = 'https://skqjginecjtcsknnddwc.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrcWpnaW5lY2p0Y3Nrbm5kZHdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQwNzYzNjksImV4cCI6MjA3OTY1MjM2OX0.E5K6P4fBGYnrlo8cdNYx5JsJQhlSO8ndtJHnGbTbuL8';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+/* ───── Cargar productos ───── */
 async function loadProducts() {
     const { data, error } = await supabase
         .from("Articulos")
@@ -36,6 +37,18 @@ loadProducts();
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
-menuBtn.addEventListener("click", () => {
+// Abrir/cerrar menú
+menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
     sidebar.classList.toggle("active");
+});
+
+// Cerrar menú al tocar fuera
+document.addEventListener("click", (e) => {
+    const clickEnSidebar = sidebar.contains(e.target);
+    const clickEnBoton = menuBtn.contains(e.target);
+
+    if (!clickEnSidebar && !clickEnBoton) {
+        sidebar.classList.remove("active");
+    }
 });
